@@ -19,7 +19,7 @@ int wifi_status = WL_IDLE_STATUS;
 const char *mqtt_broker = "test.mosquitto.org"; // mqtt broker
 int port = 1883; // tcp port
 const char *topic = "gps_location";
-const int interval =  8000; // interval for sending megps_ssages (after 8 seconds)
+const int interval =  8000; // interval for sending gps coordinates (after 8 seconds)
 unsigned long previousMillis = 0;
 int count = 0;
 
@@ -121,7 +121,7 @@ void connectMqtt() {
   if (!mqttClient.connect(mqtt_broker, port)) {
     Serial.print("Error connecting to MQTT broker: ");
     Serial.println(mqttClient.connectError());
-    while (1);
+    while (true); // don't proceed with execution
   }
   Serial.println("Connected to MQTT broker...");
   Serial.println();
