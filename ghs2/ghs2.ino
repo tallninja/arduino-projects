@@ -36,23 +36,23 @@ void loop() {
   else
     digitalWrite(motorPin, LOW);
 
-  if (Serial.available() > 0) {
-    char data = Serial.read();
-    Serial.println(data);
-    delay(10);
-    if (data == 'A') {
-      digitalWrite(dehumidPin, HIGH);
-    }
-    else if (data == 'a') {
-      digitalWrite(dehumidPin, LOW);
-    }
-    else if (data == 'B') {
-      digitalWrite(motorPin, HIGH);
-    }
-    else if (data == 'b') {
-      digitalWrite(motorPin, LOW);
-    }
-  }
+//  if (Serial.available() > 0) {
+//    char data = Serial.read();
+//    Serial.println(data);
+//    delay(10);
+//    if (data == 'A') {
+//      digitalWrite(dehumidPin, HIGH);
+//    }
+//    else if (data == 'a') {
+//      digitalWrite(dehumidPin, LOW);
+//    }
+//    else if (data == 'B') {
+//      digitalWrite(motorPin, HIGH);
+//    }
+//    else if (data == 'b') {
+//      digitalWrite(motorPin, LOW);
+//    }
+//  }
 }
 
 void readDhtData() {
